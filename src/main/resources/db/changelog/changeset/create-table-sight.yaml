@@ -1,0 +1,42 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-table-sight
+      author: macodes
+      changes:
+        - createTable:
+            tableName: sight
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(60)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: date_construction
+                  type: date
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: type
+                  type: varchar(60)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: city_id
+                  type: int
+                  constraints:
+                    foreignKeyName: city_article_fk
+                    referencedTableName: city
+                    referencedColumnNames: id

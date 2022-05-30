@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-table-city
+      author: macodes
+      changes:
+        - createTable:
+            tableName: city
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: city_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: population
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: subway_availability
+                  type: boolean
+                  constraints:
+                    nullable: false
+              - column:
+                  name: country
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
